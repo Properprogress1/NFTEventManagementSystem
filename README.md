@@ -12,3 +12,6 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 # NFTEventManagementSystem
+
+
+This is an NFT gated even where users create events and they can only do that if they mint an NFT
