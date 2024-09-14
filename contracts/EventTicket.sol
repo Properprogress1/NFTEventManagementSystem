@@ -6,11 +6,11 @@ interface IEVNFTContract {
 }
 
 contract EventManagement {
-
+    address public nftContractAddress;
     uint256 public eventCount;
     mapping(uint256 => Event) public events;
     mapping(address => bool) public isNFTOwner;
-    address public nftContractAddress;
+   
 
     struct Event {
         uint256 id;
@@ -33,6 +33,8 @@ contract EventManagement {
         events[eventCount] = Event(eventCount, _name, _description, block.timestamp, msg.sender, false);
     }
 
+    // function 
+
     function checkNFTOwnership() public {
         require(nftContractAddress != address(0), "NFT contract address not set");
 
@@ -54,6 +56,7 @@ contract EventManagement {
 
         events[_eventId].canceled = true;
     }
+
 }
 
 
